@@ -1,0 +1,15 @@
+Aluminium1100-H14	70000	0.33	2710	0	90	90	0
+Aluminium5052-H34	70000	0.33	2710	0	165	165	0
+Aluminium6061-T6	70000	0.33	2710	0	240	240	0
+Aluminium2024-T3	72000	0.33	2710	0	300	300	0
+Cabon-Steel	210000	0.3	7680	0	350	350	0
+Inox304	190000	0.24	7680	0	250	250	0
+Glass/Polyester	6500	0.14	1400	0	100	100	0
+Pine-Plywood	12000	0.1	600	0	20	20	0
+Woven-Glass/Epoxy1581-F155	25000	0.14	1900	0	450	450	0
+Woven-Graffiti/Epoxy282-F155	55000	0.1	1540	0	60	60	0
+Woven-Kevlar/EpoxyK49-285-F155	28000	0	1400	0	200	200	0
+Woven-Roving-Glass/Polyester	12000	0.14	1400	0	250	250	0
+---------------------CUSTOM---------------------	0	0	0	0	0	0	0
+Lamina do Sandro	2.0	4.0	3.0	1.0	6.0	7.0	5.0
+laminado	2.0	4.0	3.0	1.0	67.0	1.0	5.0
