@@ -6,8 +6,6 @@ resp2= ""
 resp3= ""
 resp4= ""
 
-# alissonmller@gmail.com
-# prints e o programa
 
 def read_core(self):
 	nucleo=[]
