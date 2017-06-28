@@ -195,7 +195,11 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 		
 		Mmax = (load*l**2)/8
 		Qmax = (load*l)/2			
-		d=(h+H)/2				
+		#H = H do nucleo nas formulas que deveria ser Hn entao o Hmedio ("d"), sera:
+		d=(h+H)/2
+		#H na verdade eh H da viga inteira entao, atualizando H para ser a altura do nucleo, fica:
+		
+		H = H-h				
 		Dv = (ef*((b*h**3)/6))+(ef*((b*h*d**2)/2))+(ec*((b*H**3)/12))				
 		k = (load/(2*Dv))				
 		NormalFaceStrenght = (Mmax/Dv)*ef
@@ -205,7 +209,7 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 		Tal_f_max = (load*h*d)*ef/2*Dv		
 		Tal_c_max = k*((ef*h*d)+(ec*((H**2)/2)))						
 		kz = interpolate(v,r)				
-		w = ((load*l**3)/(48*Dv))+((load*l)/(kz*4*a*g))		
+		w = ((5*load*l**4)/(384*Dv))+((load*l**2)/(kz*8*a*g))		
 		cstress = NormalFaceStrenght*(-1)		
 		total_density = ((2*h*density_face)/(H*b*l)) + (((H-2*h)*density_core)/(H*b*l))		
 		FS_tensile = tensile/NormalFaceStrenght
@@ -238,11 +242,15 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 		
 	elif beam_cb == "Free-Fixed / Point":
 		
-		Mmax = (load*l)/4		
-		Qmax = load*l
+		Mmax = load*l	
+		Qmax = load
 		
 			
+		#H = H do nucleo nas formulas que deveria ser Hn entao o Hmedio ("d"), sera:
 		d=(h+H)/2
+		#H na verdade eh H da viga inteira entao, atualizando H para ser a altura do nucleo, fica:
+		
+		H = H-h
 				
 		Dv = (ef*((b*h**3)/6))+(ef*((b*h*d**2)/2))+(ec*((b*H**3)/12))
 				
@@ -264,7 +272,7 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 							
 		kz = interpolate(v,r)
 				
-		w = ((load*l**3)/(48*Dv))+((load*l)/(kz*4*a*g))
+		w = ((load*l**3)/(3*Dv))+((load*l)/(kz*a*g))
 		
 		cstress = NormalFaceStrenght*(-1)
 		
@@ -304,12 +312,16 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 		
 	elif beam_cb == "Free-Fixed / Uniform":
 		
-		Mmax = (load*l)/4
+		Mmax = (load*l**2)/2
 		
-		Qmax = load/2
+		Qmax = load*l
 		
 			
+		#H = H do nucleo nas formulas que deveria ser Hn entao o Hmedio ("d"), sera:
 		d=(h+H)/2
+		#H na verdade eh H da viga inteira entao, atualizando H para ser a altura do nucleo, fica:
+		
+		H = H-h
 				
 		Dv = (ef*((b*h**3)/6))+(ef*((b*h*d**2)/2))+(ec*((b*H**3)/12))
 				
@@ -331,7 +343,7 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 							
 		kz = interpolate(v,r)
 				
-		w = ((load*l**3)/(48*Dv))+((load*l)/(kz*4*a*g))
+		w = ((load*l**4)/(8*Dv))
 		
 		cstress = NormalFaceStrenght*(-1)
 		
@@ -371,12 +383,16 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 		
 	elif beam_cb == "Fixed-Fixed / Point":
 		
-		Mmax = (load*l)/4
+		Mmax = (load*l)/8
 		
 		Qmax = load/2
 		
 			
+		#H = H do nucleo nas formulas que deveria ser Hn entao o Hmedio ("d"), sera:
 		d=(h+H)/2
+		#H na verdade eh H da viga inteira entao, atualizando H para ser a altura do nucleo, fica:
+		
+		H = H-h
 				
 		Dv = (ef*((b*h**3)/6))+(ef*((b*h*d**2)/2))+(ec*((b*H**3)/12))
 				
@@ -398,7 +414,7 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 							
 		kz = interpolate(v,r)
 				
-		w = ((load*l**3)/(48*Dv))+((load*l)/(kz*4*a*g))
+		w = ((load*l**3)/(192*Dv))+((load*l)/(kz*4*a*g))
 		
 		cstress = NormalFaceStrenght*(-1)
 		
@@ -438,12 +454,16 @@ def beam(self, face,face_moduli,face_poisson, core, core_moduli, face_g, face_de
 		
 	elif beam_cb == "Fixed-Fixed / Uniform":
 		
-		Mmax = (load*l)/4
+		Mmax = (load*l**2)/12
 		
-		Qmax = load/2
+		Qmax = load*l/2
 		
 			
+		#H = H do nucleo nas formulas que deveria ser Hn entao o Hmedio ("d"), sera:
 		d=(h+H)/2
+		#H na verdade eh H da viga inteira entao, atualizando H para ser a altura do nucleo, fica:
+		
+		H = H-h
 				
 		Dv = (ef*((b*h**3)/6))+(ef*((b*h*d**2)/2))+(ec*((b*H**3)/12))
 				
