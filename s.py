@@ -7,7 +7,7 @@ packages = []
 
 setup(
     name = 'Sancomp',
-    version = '1.1',
+    version = '1.2',
     description = 'A Sandwich Composite Analysis Software',
     author = 'Douglas Rodrigues',
     author_email = 'rodriguesdouglas@ufrgs.br',
